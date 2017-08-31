@@ -1,0 +1,41 @@
+What is "Valid" XML?
+
+	- Adheres to basic structural requirements.
+		- Adheres to content-specific specification.
+			- Document Type Descriptor (DTD)
+			- XML Schema (XSD)
+			
+		What happens with well-formed XML docs:
+		- An XML document is sent to the XML parser which will decide if the document
+		  is either not well-formed or it is well-formed and output parsed XML.
+		  
+		What happens with valid XML?
+		- XML document undergoes validation by the XML parser. Additional input in the
+		  process is either a DTD or an XSD. One of these is fed to the parser along with
+		  the doc.
+		
+		- Parser can say document is not well-formed if it doesn't meet basic structural
+		  requirements.
+		  
+			- It can also say doc is not valid AKA structure of the doc does not match 
+			  content-specific specification.
+			  
+
+Document Type Descriptor (DTD)
+
+	- Grammar-like language for specifying elements, attributes, nesting, ordering, # of
+	  occurrences.
+	- Also special attribute types ID and IDREF(S)
+	
+	
+DTD / XSD vs. None (Well-Formed)
+
+	PROS
+		- Programs are simpler due to not needing much error checking on data.
+		- Programs know that before the data reaches them, it's been run through
+		  a validator and it does satisfy a particular structure.
+		- Documentation
+		
+	CONS (Benefits of not using DTD)
+		- Flexibility / ease of change in how data is formatted.
+		- Cleaner / not having to deal with messiness.
